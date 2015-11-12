@@ -7,6 +7,7 @@ CACHE_DIR=$2
 ENV_FILE=$3
 
 PROFILE_PATH="$BUILD_DIR/.profile.d/sourceversion.sh"
+mkdir -p $(dirname $PROFILE_PATH)
 set-env() {
   echo "export $1=$2" >> $PROFILE_PATH
 }
