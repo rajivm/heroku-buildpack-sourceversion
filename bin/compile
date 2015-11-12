@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# Syntax bin/compile <build-dir> <cache-dir>
+
+BUILD_DIR=$1
+CACHE_DIR=$2
+ENV_FILE=$3
+
+PROFILE_PATH="$BUILD_DIR/.profile.d/sourceversion.sh"
+set-env() {
+  echo "export $1=$2" >> $PROFILE_PATH
+}
+
+echo "-----> Storing SOURCE_VERSION to profile env file"
+set-env SOURCE_VERSION "$SOURCE_VERSION"
